@@ -1,0 +1,135 @@
+2026-01-08 16:48:08.750 +05:00 [ERR] An error occurred using the connection to database 'WareHouse' on server 'tcp://localhost:5433'.
+2026-01-08 16:48:09.609 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-08 16:48:09.621 +05:00 [INF] Applying migration '20260108114751_Initial'.
+2026-01-08 16:49:02.681 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-08 16:49:02.707 +05:00 [FTL] Application startup exception
+System.InvalidOperationException: An error occurred when configuring the exception handler middleware. Either the 'ExceptionHandlingPath' or the 'ExceptionHandler' property must be set in 'UseExceptionHandler()'. Alternatively, set one of the aforementioned properties in 'Startup.ConfigureServices' as follows: 'services.AddExceptionHandler(options => { ... });' or configure to generate a 'ProblemDetails' response in 'service.AddProblemDetails()'.
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener, IEnumerable`1 exceptionHandlers, IMeterFactory meterFactory, IProblemDetailsService problemDetailsService)
+   at Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.<>c__DisplayClass5_0.<SetExceptionHandlerMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2026-01-08 16:49:02.718 +05:00 [ERR] Hosting failed to start
+System.InvalidOperationException: An error occurred when configuring the exception handler middleware. Either the 'ExceptionHandlingPath' or the 'ExceptionHandler' property must be set in 'UseExceptionHandler()'. Alternatively, set one of the aforementioned properties in 'Startup.ConfigureServices' as follows: 'services.AddExceptionHandler(options => { ... });' or configure to generate a 'ProblemDetails' response in 'service.AddProblemDetails()'.
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener, IEnumerable`1 exceptionHandlers, IMeterFactory meterFactory, IProblemDetailsService problemDetailsService)
+   at Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.<>c__DisplayClass5_0.<SetExceptionHandlerMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-01-08 16:50:06.888 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-08 16:50:06.924 +05:00 [INF] Now listening on: http://localhost:5095
+2026-01-08 16:50:06.928 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-08 16:50:06.930 +05:00 [INF] Hosting environment: Development
+2026-01-08 16:50:06.930 +05:00 [INF] Content root path: C:\Users\SBoboev\Desktop\Warehouse\Web
+2026-01-08 16:50:09.369 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-01-08 16:50:09.414 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2026-01-08 16:50:09.425 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2026-01-08 16:50:09.429 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/plain; charset=utf-8 62.2339ms
+2026-01-08 16:50:09.449 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/favicon.ico - null null
+2026-01-08 16:50:09.456 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/favicon.ico - 404 0 null 7.5419ms
+2026-01-08 16:50:09.462 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/favicon.ico, Response status code: 404
+2026-01-08 16:50:13.685 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-01-08 16:50:13.700 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2026-01-08 16:50:13.703 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2026-01-08 16:50:13.707 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/plain; charset=utf-8 21.4676ms
+2026-01-08 16:50:25.083 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - null null
+2026-01-08 16:50:25.173 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - 200 null text/html;charset=utf-8 89.7114ms
+2026-01-08 16:50:25.185 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui.css - null null
+2026-01-08 16:50:25.187 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-standalone-preset.js - null null
+2026-01-08 16:50:25.185 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.css - null null
+2026-01-08 16:50:25.187 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-bundle.js - null null
+2026-01-08 16:50:25.188 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.js - null null
+2026-01-08 16:50:25.197 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui.css - 200 23647 text/css 12.5315ms
+2026-01-08 16:50:25.197 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.css - 200 152 text/css 12.372ms
+2026-01-08 16:50:25.202 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 14.3459ms
+2026-01-08 16:50:25.204 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.js - 200 null application/javascript;charset=utf-8 15.2644ms
+2026-01-08 16:50:25.213 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 25.9549ms
+2026-01-08 16:50:25.341 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - null null
+2026-01-08 16:50:25.355 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/favicon-32x32.png - null null
+2026-01-08 16:50:25.359 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/favicon-32x32.png - 200 628 image/png 4.0598ms
+2026-01-08 16:50:25.406 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.2664ms
+2026-01-08 16:50:28.461 +05:00 [INF] Application is shutting down...
+2026-01-08 16:51:46.877 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-08 16:51:46.915 +05:00 [INF] Now listening on: http://localhost:5095
+2026-01-08 16:51:46.920 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-08 16:51:46.921 +05:00 [INF] Hosting environment: Development
+2026-01-08 16:51:46.922 +05:00 [INF] Content root path: C:\Users\SBoboev\Desktop\Warehouse\Web
+2026-01-08 16:51:47.545 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/api/Department - application/json 22
+2026-01-08 16:51:47.584 +05:00 [INF] CORS policy execution successful.
+2026-01-08 16:51:47.591 +05:00 [INF] Executing endpoint 'Web.Controller.DepartmentController.Create (Web)'
+2026-01-08 16:51:47.614 +05:00 [INF] Route matched with {action = "Create", controller = "Department"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.String]] Create(Domain.Dtos.AddDepartmentDto) on controller Web.Controller.DepartmentController (Web).
+2026-01-08 16:51:48.985 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-08 16:51:49.001 +05:00 [INF] Executed action Web.Controller.DepartmentController.Create (Web) in 1379.3438ms
+2026-01-08 16:51:49.007 +05:00 [INF] Executed endpoint 'Web.Controller.DepartmentController.Create (Web)'
+2026-01-08 16:51:49.015 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/api/Department - 200 null application/json; charset=utf-8 1471.076ms
+2026-01-08 16:51:57.588 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/api/Position - application/json 22
+2026-01-08 16:51:57.595 +05:00 [INF] CORS policy execution successful.
+2026-01-08 16:51:57.598 +05:00 [INF] Executing endpoint 'Web.Controller.PositionController.Create (Web)'
+2026-01-08 16:51:57.606 +05:00 [INF] Route matched with {action = "Create", controller = "Position"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.String]] Create(Domain.Dtos.PositionDto.AddPositionDto) on controller Web.Controller.PositionController (Web).
+2026-01-08 16:51:57.683 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-08 16:51:57.689 +05:00 [INF] Executed action Web.Controller.PositionController.Create (Web) in 80.2378ms
+2026-01-08 16:51:57.691 +05:00 [INF] Executed endpoint 'Web.Controller.PositionController.Create (Web)'
+2026-01-08 16:51:57.694 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/api/Position - 200 null application/json; charset=utf-8 105.6942ms
+2026-01-08 16:52:09.904 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/api/SubDepartment - application/json 43
+2026-01-08 16:52:09.912 +05:00 [INF] CORS policy execution successful.
+2026-01-08 16:52:09.915 +05:00 [INF] Executing endpoint 'Web.Controller.SubDepartmentController.Create (Web)'
+2026-01-08 16:52:09.924 +05:00 [INF] Route matched with {action = "Create", controller = "SubDepartment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.String]] Create(Domain.Dtos.SubDepartmentDto.AddSubDepartmentDto) on controller Web.Controller.SubDepartmentController (Web).
+2026-01-08 16:52:09.980 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-08 16:52:09.984 +05:00 [INF] Executed action Web.Controller.SubDepartmentController.Create (Web) in 55.4275ms
+2026-01-08 16:52:09.988 +05:00 [INF] Executed endpoint 'Web.Controller.SubDepartmentController.Create (Web)'
+2026-01-08 16:52:09.991 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/api/SubDepartment - 200 null application/json; charset=utf-8 87.4383ms
+2026-01-08 16:52:21.370 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/api/Employee - multipart/form-data; boundary=----WebKitFormBoundaryILWBdga9BY4npfnS 552
+2026-01-08 16:52:21.377 +05:00 [INF] CORS policy execution successful.
+2026-01-08 16:52:21.379 +05:00 [INF] Executing endpoint 'Web.Controller.EmployeeController.Create (Web)'
+2026-01-08 16:52:21.389 +05:00 [INF] Route matched with {action = "Create", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.String]] Create(Domain.Dtos.EmployeeDto.AddEmployeeDto) on controller Web.Controller.EmployeeController (Web).
+2026-01-08 16:52:21.465 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-08 16:52:21.471 +05:00 [INF] Executed action Web.Controller.EmployeeController.Create (Web) in 77.7802ms
+2026-01-08 16:52:21.474 +05:00 [INF] Executed endpoint 'Web.Controller.EmployeeController.Create (Web)'
+2026-01-08 16:52:21.477 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/api/Employee - 200 null application/json; charset=utf-8 106.9852ms
+2026-01-08 16:52:36.471 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/api/FixedAsset - application/json 173
+2026-01-08 16:52:36.474 +05:00 [INF] CORS policy execution successful.
+2026-01-08 16:52:36.478 +05:00 [INF] Executing endpoint 'Web.Controller.FixedAssetController.Create (Web)'
+2026-01-08 16:52:36.490 +05:00 [INF] Route matched with {action = "Create", controller = "FixedAsset"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.String]] Create(Domain.Dtos.FixedAssetDto.AddFixedAssetDto) on controller Web.Controller.FixedAssetController (Web).
+2026-01-08 16:52:36.562 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-08 16:52:36.565 +05:00 [INF] Executed action Web.Controller.FixedAssetController.Create (Web) in 71.1008ms
+2026-01-08 16:52:36.569 +05:00 [INF] Executed endpoint 'Web.Controller.FixedAssetController.Create (Web)'
+2026-01-08 16:52:36.572 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/api/FixedAsset - 200 null application/json; charset=utf-8 100.645ms
+2026-01-08 16:52:48.503 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/QrCode/fixed-asset/1 - null null
+2026-01-08 16:52:48.508 +05:00 [INF] Executing endpoint 'Web.Controller.QrCodeController.GenerateFixedAssetQr (Web)'
+2026-01-08 16:52:48.514 +05:00 [INF] Route matched with {action = "GenerateFixedAssetQr", controller = "QrCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateFixedAssetQr(Int32) on controller Web.Controller.QrCodeController (Web).
+2026-01-08 16:52:48.520 +05:00 [INF] Executed action Web.Controller.QrCodeController.GenerateFixedAssetQr (Web) in 3.32ms
+2026-01-08 16:52:48.522 +05:00 [INF] Executed endpoint 'Web.Controller.QrCodeController.GenerateFixedAssetQr (Web)'
+2026-01-08 16:52:48.525 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Infrastructure.Interfaces.IQrCodeService' while attempting to activate 'Web.Controller.QrCodeController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method381(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-08 16:52:48.546 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/QrCode/fixed-asset/1 - 500 null text/plain; charset=utf-8 42.6028ms
+2026-01-08 16:53:30.180 +05:00 [INF] Application is shutting down...
+2026-01-08 16:53:33.772 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-08 16:53:33.809 +05:00 [INF] Now listening on: http://localhost:5095
+2026-01-08 16:53:33.813 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-08 16:53:33.816 +05:00 [INF] Hosting environment: Development
+2026-01-08 16:53:33.817 +05:00 [INF] Content root path: C:\Users\SBoboev\Desktop\Warehouse\Web
+2026-01-08 16:53:34.674 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/QrCode/fixed-asset/1 - null null
+2026-01-08 16:53:34.718 +05:00 [INF] Executing endpoint 'Web.Controller.QrCodeController.GenerateFixedAssetQr (Web)'
+2026-01-08 16:53:34.743 +05:00 [INF] Route matched with {action = "GenerateFixedAssetQr", controller = "QrCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateFixedAssetQr(Int32) on controller Web.Controller.QrCodeController (Web).
+2026-01-08 16:53:36.833 +05:00 [INF] Executing FileContentResult, sending file with download name 'fixed_asset_qr_1.png' ...
+2026-01-08 16:53:36.841 +05:00 [INF] Executed action Web.Controller.QrCodeController.GenerateFixedAssetQr (Web) in 2092.198ms
+2026-01-08 16:53:36.847 +05:00 [INF] Executed endpoint 'Web.Controller.QrCodeController.GenerateFixedAssetQr (Web)'
+2026-01-08 16:53:36.859 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/QrCode/fixed-asset/1 - 200 3486 image/png 2186.31ms
+2026-01-08 17:05:15.029 +05:00 [INF] Application is shutting down...
