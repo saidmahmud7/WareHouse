@@ -134,3 +134,7 @@ System.InvalidOperationException: Unable to resolve service for type 'Infrastruc
 2026-01-08 16:53:36.859 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/QrCode/fixed-asset/1 - 200 3486 image/png 2186.31ms
 2026-01-08 17:05:15.029 +05:00 [INF] Application is shutting down...
 2026-01-09 08:46:58.334 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
+2026-01-09 09:23:58.457 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a:5432'.
+2026-01-09 09:26:24.207 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
+2026-01-09 09:32:55.861 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
+2026-01-09 09:33:46.981 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.

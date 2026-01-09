@@ -1,4 +1,6 @@
+using Infrastructure.Data;
 using Infrastructure.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Extensions;
 using Serilog;
@@ -35,9 +37,11 @@ app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
 
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
     using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<DataContext>();
+    dbContext.Database.Migrate();
     var swaggerProvider = scope.ServiceProvider.GetRequiredService<ISwaggerProvider>();
     var swagger = swaggerProvider.GetSwagger("v1");
 
