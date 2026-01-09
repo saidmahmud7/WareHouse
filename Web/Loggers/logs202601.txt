@@ -138,3 +138,6 @@ System.InvalidOperationException: Unable to resolve service for type 'Infrastruc
 2026-01-09 09:26:24.207 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
 2026-01-09 09:32:55.861 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
 2026-01-09 09:33:46.981 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
+2026-01-09 09:42:40.082 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
+2026-01-09 09:42:58.840 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a:5432'.
+2026-01-09 09:44:31.236 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a:5432'.
