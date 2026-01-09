@@ -118,7 +118,6 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             throw new ApiException($"No employee found with id: {id}");
         }
 
-        employee.Id = request.Id;
         employee.FullName = request.FullName;
         employee.RoleForEmployee = request.RoleForEmployee;
         employee.PositionId = request.PositionId;
@@ -132,32 +131,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             : new ApiResponse<string>(HttpStatusCode.BadRequest, "Failed");
     }
 
-    public async Task<ApiResponse<string>> UpdateUserProfileImageAsync(int employeeId,
-        IFormFile profileImage)
-    {
-        var user = await repository.GetEmployee(u => u.Id == employeeId);
-        if (user == null)
-            return new ApiResponse<string>(HttpStatusCode.NotFound, "User not found");
-        const long maxFileSize = 5 * 1024 * 1024;
-        if (profileImage.Length > maxFileSize)
-            return new ApiResponse<string>(HttpStatusCode.BadRequest, "Image file size must be less than 5MB");
-
-        var allowedExtensions = new HashSet<string> { ".jpg", ".jpeg", ".png", ".gif" };
-        var fileExtension = Path.GetExtension(profileImage.FileName).ToLowerInvariant();
-        if (!allowedExtensions.Contains(fileExtension))
-            return new ApiResponse<string>(HttpStatusCode.BadRequest,
-                "Invalid image format. Allowed: .jpg, .jpeg, .png, .gif");
-
-        var uploadsFolder = Path.Combine(_environment.ContentRootPath, "uploads", "profiles");
-        if (!Directory.Exists(uploadsFolder))
-            Directory.CreateDirectory(uploadsFolder);
-
-      
-        await repository.UpdateEmployee(user);
-
-        return new ApiResponse<string>(HttpStatusCode.OK,"Profile image updated successfully");
-    }
-
+ 
     public async Task<ApiResponse<string>> DeleteAsync(int id)
     {
         var employee = await repository.GetEmployee(q => q.Id == id);

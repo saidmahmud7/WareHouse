@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20260108114751_Initial")]
+    [Migration("20260109034628_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -135,9 +135,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<int>("PositionId")
                         .HasColumnType("integer");
-
-                    b.Property<string>("ProfileImagePath")
-                        .HasColumnType("text");
 
                     b.Property<int>("RoleForEmployee")
                         .HasColumnType("integer");

@@ -5,7 +5,6 @@ namespace Domain.Dtos.EmployeeDto;
 
 public class UpdateEmployeeDto
 {
-    public int Id { get; set; }
     public required string FullName { get; set; }
     public RoleForEmployee RoleForEmployee { get; set; }
     public IFormFile? ProfileImage { get; set; }

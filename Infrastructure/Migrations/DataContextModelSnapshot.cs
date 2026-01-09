@@ -133,9 +133,6 @@ namespace Infrastructure.Migrations
                     b.Property<int>("PositionId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ProfileImagePath")
-                        .HasColumnType("text");
-
                     b.Property<int>("RoleForEmployee")
                         .HasColumnType("integer");
 

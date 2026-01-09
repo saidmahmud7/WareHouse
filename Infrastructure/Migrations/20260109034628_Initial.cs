@@ -66,7 +66,6 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FullName = table.Column<string>(type: "text", nullable: false),
                     RoleForEmployee = table.Column<int>(type: "integer", nullable: false),
-                    ProfileImagePath = table.Column<string>(type: "text", nullable: true),
                     PositionId = table.Column<int>(type: "integer", nullable: false),
                     SubDepartmentId = table.Column<int>(type: "integer", nullable: true)
                 },
