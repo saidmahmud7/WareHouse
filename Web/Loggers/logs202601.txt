@@ -141,3 +141,5 @@ System.InvalidOperationException: Unable to resolve service for type 'Infrastruc
 2026-01-09 09:42:40.082 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a.singapore-postgres.render.com:5432'.
 2026-01-09 09:42:58.840 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a:5432'.
 2026-01-09 09:44:31.236 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_ybwd' on server 'tcp://dpg-d5fpulc9c44c738pnlmg-a:5432'.
+2026-01-09 10:19:57.021 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-09 10:19:57.325 +05:00 [INF] Applying migration '20260109034628_Initial'.

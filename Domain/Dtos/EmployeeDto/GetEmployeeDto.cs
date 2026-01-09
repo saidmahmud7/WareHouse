@@ -9,7 +9,6 @@ public class GetEmployeeDto
     public int Id { get; set; }
     public string FullName { get; set; }
     public RoleForEmployee RoleForEmployee { get; set; }
-    public string? ProfileImagePath { get; set; }
     public int PositionId { get; set; }
     public int? SubDepartmentId { get; set; }
     public List<GetFixedAssetDto> FixedAssets { get; set; } = new();
