@@ -28,7 +28,6 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             Id = e.Id,
             FullName = e.FullName,
             RoleForEmployee = e.RoleForEmployee,
-            ProfileImagePath = e.ProfileImagePath,
             PositionId = e.PositionId,
             SubDepartmentId = e.SubDepartmentId,
             FixedAssets = e.FixedAssets.Select(f => new GetFixedAssetDto()
@@ -68,7 +67,6 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             Id = employee.Id,
             FullName = employee.FullName,
             RoleForEmployee = employee.RoleForEmployee,
-            ProfileImagePath = employee.ProfileImagePath,
             PositionId = employee.PositionId,
             SubDepartmentId = employee.SubDepartmentId,
             FixedAssets = employee.FixedAssets.Select(f => new GetFixedAssetDto()
@@ -104,34 +102,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             SubDepartmentId = request.SubDepartmentId,
         };
 
-        if (request.ProfileImage != null && request.ProfileImage.Length > 0)
-        {
-            const long maxFileSize = 5 * 1024 * 1024; // 5 MB
-            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-
-            var fileExtension = Path.GetExtension(request.ProfileImage.FileName).ToLowerInvariant();
-
-            if (!allowedExtensions.Contains(fileExtension))
-                return new ApiResponse<string>(HttpStatusCode.BadRequest,
-                    "Invalid image format. Allowed: .jpg, .jpeg, .png, .gif");
-
-            if (request.ProfileImage.Length > maxFileSize)
-                return new ApiResponse<string>(HttpStatusCode.BadRequest, "Image file size must be less than 5MB");
-
-
-            var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
-
-            var uploadsFolder = Path.Combine(_environment.ContentRootPath, "uploads", "profiles");
-            Directory.CreateDirectory(uploadsFolder);
-
-            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-            await using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await request.ProfileImage.CopyToAsync(stream);
-            }
-
-            employee.ProfileImagePath = $"/uploads/profiles/{uniqueFileName}";
-        }
+      
 
         var result = await repository.CreateEmployee(employee);
         return result == 1
@@ -153,39 +124,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
         employee.PositionId = request.PositionId;
         employee.SubDepartmentId = request.SubDepartmentId;
 
-        if (request.ProfileImage != null && request.ProfileImage.Length > 0)
-        {
-            const long maxFileSize = 5 * 1024 * 1024; // 5 MB
-            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-
-            var fileExtension = Path.GetExtension(request.ProfileImage.FileName).ToLowerInvariant();
-            if (!allowedExtensions.Contains(fileExtension))
-                return new ApiResponse<string>(HttpStatusCode.BadRequest,
-                    "Invalid image format. Allowed: .jpg, .jpeg, .png, .gif");
-
-            if (request.ProfileImage.Length > maxFileSize)
-                return new ApiResponse<string>(HttpStatusCode.BadRequest, "Image file size must be less than 5MB");
-
-            var uploadsFolder = Path.Combine(_environment.ContentRootPath, "uploads", "profiles");
-            Directory.CreateDirectory(uploadsFolder);
-
-            if (!string.IsNullOrEmpty(employee.ProfileImagePath))
-            {
-                var oldFilePath = Path.Combine(_environment.ContentRootPath, employee.ProfileImagePath.TrimStart('/'));
-                if (File.Exists(oldFilePath))
-                    File.Delete(oldFilePath);
-            }
-
-            var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
-            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-            await using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await request.ProfileImage.CopyToAsync(stream);
-            }
-
-            employee.ProfileImagePath = $"/uploads/profiles/{uniqueFileName}";
-        }
+       
 
         var result = await repository.UpdateEmployee(employee);
         return result == 1
@@ -213,23 +152,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
         if (!Directory.Exists(uploadsFolder))
             Directory.CreateDirectory(uploadsFolder);
 
-        // Agar rasm doshta boshad onro nest nekunem
-        if (!string.IsNullOrEmpty(user.ProfileImagePath))
-        {
-            var oldFilePath = Path.Combine(_environment.ContentRootPath, user.ProfileImagePath.TrimStart('/'));
-            if (File.Exists(oldFilePath))
-                File.Delete(oldFilePath);
-        }
-
-        var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
-        var newFilePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-        await using (var stream = new FileStream(newFilePath, FileMode.Create))
-        {
-            await profileImage.CopyToAsync(stream);
-        }
-
-        user.ProfileImagePath = $"/uploads/profiles/{uniqueFileName}";
+      
         await repository.UpdateEmployee(user);
 
         return new ApiResponse<string>(HttpStatusCode.OK,"Profile image updated successfully");

@@ -35,7 +35,6 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
                 PositionId = e.PositionId,    
                 
                 SubDepartmentId = e.SubDepartmentId,
-                ProfileImagePath = e.ProfileImagePath,
             }).ToList()
         }).ToList();
         return new PaginationResponse<List<GetSubDepartmentDto>>(result, totalRecords, filter.PageNumber,
@@ -62,7 +61,6 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
                 RoleForEmployee = e.RoleForEmployee,    
                 PositionId = e.PositionId,
                 SubDepartmentId = e.SubDepartmentId,
-                ProfileImagePath = e.ProfileImagePath,
             }).ToList()
            
         };

@@ -19,11 +19,11 @@ public class EmployeeController(IEmployeeService service) : ControllerBase
     public async Task<ApiResponse<GetEmployeeDto>> GetById(int id) => await service.GetByIdAsync(id);
 
     [HttpPost]
-    public async Task<ApiResponse<string>> Create([FromForm] AddEmployeeDto request) =>
+    public async Task<ApiResponse<string>> Create([FromBody] AddEmployeeDto request) =>
         await service.CreateAsync(request);
 
     [HttpPut("{id}")]
-    public async Task<ApiResponse<string>> Update([FromRoute]int id, [FromForm] UpdateEmployeeDto request) =>
+    public async Task<ApiResponse<string>> Update([FromRoute]int id,UpdateEmployeeDto request) =>
         await service.UpdateAsync(id, request);
 
     [HttpDelete("{id}")]

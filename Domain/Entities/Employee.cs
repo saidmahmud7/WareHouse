@@ -9,10 +9,6 @@ public class Employee
     public int Id { get; set; }
     public string FullName { get; set; }
     public RoleForEmployee RoleForEmployee { get; set; }   
-    [NotMapped]
-    public IFormFile? ProfileImage { get; set; }
-
-    public string? ProfileImagePath { get; set; }
     public int PositionId { get; set; }
     public Position Position { get; set; }
 
