@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20260109034628_Initial")]
-    partial class Initial
+    [Migration("20260110042522_Initial3")]
+    partial class Initial3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -133,8 +133,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PositionId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("RoleForEmployee")
                         .HasColumnType("integer");
@@ -144,28 +145,9 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
-
                     b.HasIndex("SubDepartmentId");
 
                     b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Position", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("Domain.Entities.SubDepartment", b =>
@@ -248,17 +230,9 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Employee", b =>
                 {
-                    b.HasOne("Domain.Entities.Position", "Position")
-                        .WithMany("Employees")
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Domain.Entities.SubDepartment", "SubDepartment")
                         .WithMany("Employees")
                         .HasForeignKey("SubDepartmentId");
-
-                    b.Navigation("Position");
 
                     b.Navigation("SubDepartment");
                 });
@@ -302,11 +276,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("FixedAssets");
 
                     b.Navigation("InventoryItems");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Position", b =>
-                {
-                    b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("Domain.Entities.SubDepartment", b =>

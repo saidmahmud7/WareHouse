@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Initial3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,19 +23,6 @@ namespace Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Departments", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Positions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Positions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -66,18 +53,12 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FullName = table.Column<string>(type: "text", nullable: false),
                     RoleForEmployee = table.Column<int>(type: "integer", nullable: false),
-                    PositionId = table.Column<int>(type: "integer", nullable: false),
+                    Position = table.Column<string>(type: "text", nullable: false),
                     SubDepartmentId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Employees_Positions_PositionId",
-                        column: x => x.PositionId,
-                        principalTable: "Positions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Employees_SubDepartments_SubDepartmentId",
                         column: x => x.SubDepartmentId,
@@ -175,11 +156,6 @@ namespace Infrastructure.Migrations
                 column: "ToEmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_PositionId",
-                table: "Employees",
-                column: "PositionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Employees_SubDepartmentId",
                 table: "Employees",
                 column: "SubDepartmentId");
@@ -201,9 +177,6 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
-
-            migrationBuilder.DropTable(
-                name: "Positions");
 
             migrationBuilder.DropTable(
                 name: "SubDepartments");

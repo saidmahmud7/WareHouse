@@ -33,7 +33,6 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
                 FullName = e.FullName,
                 RoleForEmployee = e.RoleForEmployee,    
                 Position = e.Position,    
-                
                 SubDepartmentId = e.SubDepartmentId,
             }).ToList()
         }).ToList();
