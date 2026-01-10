@@ -83,7 +83,6 @@ public class DepartmentService(IDepartmentRepository repository) : IDepartmentSe
             throw new ApiException($"No Department found with id: {id}");
         }
 
-        department.Id = request.Id;
         department.Name = request.Name;
         
         var result = await repository.UpdateDepartment(department);

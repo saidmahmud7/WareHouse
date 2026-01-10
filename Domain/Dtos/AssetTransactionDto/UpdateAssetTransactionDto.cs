@@ -2,7 +2,6 @@ namespace Domain.Dtos.AssetTransactionDto;
 
 public class UpdateAssetTransactionDto
 {
-    public int Id { get; set; }
     public int? FixedAssetId { get; set; }            // Внешний ключ для FixedAsset
     public int? InventoryItemId { get; set; }         // Внешний ключ для InventoryItem
     public string TransactionType { get; set; }       // Например, "Arrival", "Transfer", "WriteOff"

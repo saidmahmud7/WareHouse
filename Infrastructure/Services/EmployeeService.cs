@@ -28,7 +28,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             Id = e.Id,
             FullName = e.FullName,
             RoleForEmployee = e.RoleForEmployee,
-            PositionId = e.PositionId,
+            Position = e.Position,
             SubDepartmentId = e.SubDepartmentId,
             FixedAssets = e.FixedAssets.Select(f => new GetFixedAssetDto()
             {
@@ -67,7 +67,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
             Id = employee.Id,
             FullName = employee.FullName,
             RoleForEmployee = employee.RoleForEmployee,
-            PositionId = employee.PositionId,
+            Position = employee.Position,
             SubDepartmentId = employee.SubDepartmentId,
             FixedAssets = employee.FixedAssets.Select(f => new GetFixedAssetDto()
             {
@@ -98,7 +98,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
         {
             FullName = request.FullName,
             RoleForEmployee = request.RoleForEmployee,
-            PositionId = request.PositionId,
+            Position = request.Position,
             SubDepartmentId = request.SubDepartmentId,
         };
 
@@ -120,7 +120,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
 
         employee.FullName = request.FullName;
         employee.RoleForEmployee = request.RoleForEmployee;
-        employee.PositionId = request.PositionId;
+        employee.Position = request.Position;
         employee.SubDepartmentId = request.SubDepartmentId;
 
        

@@ -32,7 +32,7 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
                 Id = e.Id,
                 FullName = e.FullName,
                 RoleForEmployee = e.RoleForEmployee,    
-                PositionId = e.PositionId,    
+                Position = e.Position,    
                 
                 SubDepartmentId = e.SubDepartmentId,
             }).ToList()
@@ -59,7 +59,7 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
                 Id = e.Id,
                 FullName = e.FullName,
                 RoleForEmployee = e.RoleForEmployee,    
-                PositionId = e.PositionId,
+                Position = e.Position,
                 SubDepartmentId = e.SubDepartmentId,
             }).ToList()
            
@@ -90,7 +90,6 @@ public class SubDepartmentService(ISubDepartmentRepository repository) : ISubDep
             return new ApiResponse<string>(HttpStatusCode.NotFound, "SubDepartment not found");
         }
 
-        department.Id = request.Id;    
         department.Name = request.Name;     
         department.DepartmentId = request.DepartmentId;
       

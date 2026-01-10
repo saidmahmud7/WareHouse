@@ -5,7 +5,6 @@ using Infrastructure.Repositories.DepartmentRepositories;
 using Infrastructure.Repositories.EmployeeRepositories;
 using Infrastructure.Repositories.FixedAssetRepositories;
 using Infrastructure.Repositories.InventoryItemRepositories;
-using Infrastructure.Repositories.PositionRepositories;
 using Infrastructure.Repositories.SubDepartmentRepositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -30,8 +29,7 @@ public static class RegisterService
         services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         services.AddScoped<IEmployeeService, EmployeeService>();
 
-        services.AddScoped<IPositionService, PositionService>();
-        services.AddScoped<IPositionRepository, PositionRepository>();
+
 
         services.AddScoped<IFixedAssetRepository, FixedAssetRepository>();
         services.AddScoped<IFixedAssetService, FixedAssetService>();

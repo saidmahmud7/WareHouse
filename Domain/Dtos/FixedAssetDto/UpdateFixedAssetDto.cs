@@ -2,7 +2,6 @@ namespace Domain.Dtos.FixedAssetDto;
 
 public class UpdateFixedAssetDto
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public string InventoryNumber { get; set; } // Инвентарный номер
     public DateTime AcquisitionDate { get; set; }          // Дата (например, дата приобретения или постановки на учёт)

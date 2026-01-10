@@ -77,12 +77,12 @@ public class InventoryItemService(IInventoryItemRepository repository) : IInvent
             return new ApiResponse<string>(HttpStatusCode.NotFound, "InventoryItem not found");
         }
 
-        inventoryItem.Id = inventoryItem.Id;
-        inventoryItem.Name = inventoryItem.Name;
-        inventoryItem.InventoryNumber = inventoryItem.InventoryNumber;
-        inventoryItem.AcquisitionDate = inventoryItem.AcquisitionDate;
-        inventoryItem.EmployeeId = inventoryItem.EmployeeId;
-        inventoryItem.Unit = inventoryItem.Unit;
+        inventoryItem.Name = request.Name;
+        inventoryItem.InventoryNumber = request.InventoryNumber;
+        inventoryItem.AcquisitionDate = request.AcquisitionDate;
+        inventoryItem.EmployeeId = request.EmployeeId;
+        inventoryItem.Unit = request.Unit;
+        
         var result = await repository.UpdateInventoryItem(inventoryItem);
         return result == 1
             ? new ApiResponse<string>("Success")
