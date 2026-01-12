@@ -12,9 +12,21 @@ public class FixedAssetRepository(DataContext context, ILogger<FixedAssetReposit
     public async Task<List<FixedAsset>> GetAll(FixedAssetFilter filter)
     {
         var query = context.FixedAssets.AsQueryable();
+        if (!string.IsNullOrEmpty(filter.Name))
+            query = query.Where(e => e.Name.ToLower().Trim().Contains(filter.Name.ToLower().Trim()));
 
         var fixedAssets = await query.ToListAsync();
         return fixedAssets;
+    }
+
+    public async Task<int> GetCountByName(FixedAssetFilter filter)
+    {
+        var query = context.FixedAssets.AsQueryable();
+        if (!string.IsNullOrEmpty(filter.Name))
+            
+            query = query.Where(e => e.Name.Trim().ToLower() == filter.Name.Trim().ToLower());
+        
+        return await query.CountAsync();
     }
 
     public async Task<FixedAsset?> GetFixedAsset(Expression<Func<FixedAsset, bool>>? filter = null)

@@ -14,6 +14,10 @@ public class InventoryItemController(IInventoryItemService service) : Controller
     public async Task<PaginationResponse<List<GetInventoryItemDto>>> GetAll([FromQuery] InventoryItemFilter filter) =>
         await service.GetAllInventoryItemAsync(filter);
 
+    [HttpGet("get-count")]
+    public async Task<ApiResponse<int>> GetCountByName([FromQuery] InventoryItemFilter filter) =>
+        await service.GetInventoryItemCountAsync(filter);
+
     [HttpGet("{id}")]
     public async Task<ApiResponse<GetInventoryItemDto>> GetById(int id) => await service.GetByIdAsync(id);
 

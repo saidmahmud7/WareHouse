@@ -33,6 +33,18 @@ public class InventoryItemService(IInventoryItemRepository repository) : IInvent
             filter.PageSize);
     }
 
+    public async Task<ApiResponse<int>> GetInventoryItemCountAsync(InventoryItemFilter filter)
+    {
+        if (string.IsNullOrWhiteSpace(filter.Name))
+        {
+            return new ApiResponse<int>(HttpStatusCode.BadRequest, "Название не может быть пустым");
+        }
+        var result = await repository.GetCountByName(filter);
+        
+        return new ApiResponse<int>(result);
+        
+    }
+
     public async Task<ApiResponse<GetInventoryItemDto>> GetByIdAsync(int id)
     {
         var inventoryItem = await repository.GetInventoryItem(q => q.Id == id);

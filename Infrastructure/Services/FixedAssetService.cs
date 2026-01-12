@@ -6,6 +6,7 @@ using Domain.Filter;
 using Infrastructure.Interfaces;
 using Infrastructure.Repositories.FixedAssetRepositories;
 using Infrastructure.Response;
+
 namespace Infrastructure.Services;
 
 public class FixedAssetService(IFixedAssetRepository repository) : IFixedAssetService
@@ -30,6 +31,23 @@ public class FixedAssetService(IFixedAssetRepository repository) : IFixedAssetSe
         }).ToList();
         return new PaginationResponse<List<GetFixedAssetDto>>(result, totalRecords, filter.PageNumber,
             filter.PageSize);
+    }
+
+    public Task<ApiResponse<int>> GetFixedAssetCountAsync(InventoryItemFilter filter)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<ApiResponse<int>> GetFixedAssetCountAsync(FixedAssetFilter filter)
+    {
+        if (string.IsNullOrWhiteSpace(filter.Name))
+        {
+            return new ApiResponse<int>(HttpStatusCode.BadRequest, "Название не может быть пустым");
+        }
+
+        var result = await repository.GetCountByName(filter);
+
+        return new ApiResponse<int>(result);
     }
 
     public async Task<ApiResponse<GetFixedAssetDto>> GetByIdAsync(int id)

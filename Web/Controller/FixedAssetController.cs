@@ -13,6 +13,9 @@ public class FixedAssetController(IFixedAssetService service) : ControllerBase
     [HttpGet]
     public async Task<PaginationResponse<List<GetFixedAssetDto>>> GetAll([FromQuery] FixedAssetFilter filter) =>
         await service.GetAllFixedAssetAsync(filter);
+    [HttpGet("get-count")]
+    public async Task<ApiResponse<int>> GetCountByName([FromQuery] FixedAssetFilter filter) =>
+        await service.GetFixedAssetCountAsync(filter);
 
     [HttpGet("{id}")]
     public async Task<ApiResponse<GetFixedAssetDto>> GetById(int id) => await service.GetByIdAsync(id);

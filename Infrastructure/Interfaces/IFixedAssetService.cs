@@ -8,6 +8,8 @@ public interface IFixedAssetService
 {
     
     Task<PaginationResponse<List<GetFixedAssetDto>>> GetAllFixedAssetAsync(FixedAssetFilter filter);
+    Task<ApiResponse<int>> GetFixedAssetCountAsync(FixedAssetFilter filter);
+
     Task<ApiResponse<GetFixedAssetDto>> GetByIdAsync(int id);
     Task<ApiResponse<string>> CreateAsync(AddFixedAssetDto request);
     Task<ApiResponse<string>> UpdateAsync(int id,UpdateFixedAssetDto request);

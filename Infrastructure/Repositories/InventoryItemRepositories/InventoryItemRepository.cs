@@ -13,9 +13,21 @@ public class InventoryItemRepository(DataContext context, ILogger<InventoryItemR
     public async Task<List<InventoryItem>> GetAll(InventoryItemFilter filter)
     {
         var query = context.InventoryItems.AsQueryable();
+        if (!string.IsNullOrEmpty(filter.Name))
+            query = query.Where(e => e.Name.ToLower().Trim().Contains(filter.Name.ToLower().Trim()));
 
         var inventoryItems = await query.ToListAsync();
         return inventoryItems;
+    }
+
+    public async Task<int> GetCountByName(InventoryItemFilter filter)
+    {
+        var query = context.InventoryItems.AsQueryable();
+
+        if (!string.IsNullOrEmpty(filter.Name))
+            query = query.Where(e => e.Name.Trim().ToLower() == filter.Name.Trim().ToLower());
+        
+        return await query.CountAsync();
     }
 
     public async Task<InventoryItem?> GetInventoryItem(Expression<Func<InventoryItem, bool>>? filter = null)

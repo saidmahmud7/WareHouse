@@ -7,6 +7,7 @@ namespace Infrastructure.Repositories.InventoryItemRepositories;
 public interface IInventoryItemRepository
 {
     Task<List<InventoryItem>> GetAll(InventoryItemFilter filter);
+    Task<int> GetCountByName(InventoryItemFilter filter);
     Task<InventoryItem?> GetInventoryItem(Expression<Func<InventoryItem, bool>>? filter = null);
     Task<int> CreateInventoryItem(InventoryItem request);
     Task<int> UpdateInventoryItem(InventoryItem request);

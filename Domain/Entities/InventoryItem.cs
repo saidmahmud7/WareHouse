@@ -2,5 +2,5 @@ namespace Domain.Entities;
 
 public class InventoryItem : Asset
 {
-    public string Unit { get; set; } // например: "штук" "метр"
+    public string? Unit { get; set; } 
 }

@@ -150,3 +150,74 @@ System.InvalidOperationException: Unable to resolve service for type 'Infrastruc
 2026-01-10 09:28:44.360 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_5n3z' on server 'tcp://dpg-d5g8pgu3jp1c73bstbvg-a.singapore-postgres.render.com:5432'.
 2026-01-10 09:28:50.436 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
 2026-01-10 09:28:50.713 +05:00 [INF] Applying migration '20260110042522_Initial3'.
+2026-01-12 08:51:59.014 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-12 08:51:59.325 +05:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-12 08:51:59.737 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-12 08:51:59.759 +05:00 [INF] Now listening on: http://localhost:5095
+2026-01-12 08:51:59.763 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-12 08:51:59.766 +05:00 [INF] Hosting environment: Development
+2026-01-12 08:51:59.769 +05:00 [INF] Content root path: C:\Users\SBoboev\Desktop\Warehouse\Web
+2026-01-12 08:52:01.825 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-01-12 08:52:01.865 +05:00 [INF] Executing endpoint 'HTTP: GET /'
+2026-01-12 08:52:01.875 +05:00 [INF] Executed endpoint 'HTTP: GET /'
+2026-01-12 08:52:01.879 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/plain; charset=utf-8 58.5008ms
+2026-01-12 08:52:01.899 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/favicon.ico - null null
+2026-01-12 08:52:01.903 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/favicon.ico - 404 0 null 3.6799ms
+2026-01-12 08:52:01.913 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/favicon.ico, Response status code: 404
+2026-01-12 08:52:10.768 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - null null
+2026-01-12 08:52:10.869 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - 200 null text/html;charset=utf-8 100.0241ms
+2026-01-12 08:52:10.888 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui.css - null null
+2026-01-12 08:52:10.888 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.css - null null
+2026-01-12 08:52:10.889 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-standalone-preset.js - null null
+2026-01-12 08:52:10.889 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.js - null null
+2026-01-12 08:52:10.890 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-bundle.js - null null
+2026-01-12 08:52:10.904 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.css - 200 152 text/css 15.9922ms
+2026-01-12 08:52:10.905 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui.css - 200 23647 text/css 17.1466ms
+2026-01-12 08:52:10.909 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.js - 200 null application/javascript;charset=utf-8 19.2562ms
+2026-01-12 08:52:10.918 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 28.2779ms
+2026-01-12 08:52:10.928 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 38.1963ms
+2026-01-12 08:52:11.096 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - null null
+2026-01-12 08:52:11.107 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/favicon-32x32.png - null null
+2026-01-12 08:52:11.117 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/favicon-32x32.png - 200 628 image/png 10.2691ms
+2026-01-12 08:52:11.166 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 69.5612ms
+2026-01-12 08:52:17.501 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/InventoryItem - null null
+2026-01-12 08:52:17.507 +05:00 [INF] Executing endpoint 'Web.Controller.InventoryItemController.GetAll (Web)'
+2026-01-12 08:52:17.556 +05:00 [INF] Route matched with {action = "GetAll", controller = "InventoryItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.PaginationResponse`1[System.Collections.Generic.List`1[Domain.Dtos.InventoryItem.GetInventoryItemDto]]] GetAll(Domain.Filter.InventoryItemFilter) on controller Web.Controller.InventoryItemController (Web).
+2026-01-12 08:52:18.052 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.PaginationResponse`1[[System.Collections.Generic.List`1[[Domain.Dtos.InventoryItem.GetInventoryItemDto, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-12 08:52:18.077 +05:00 [INF] Executed action Web.Controller.InventoryItemController.GetAll (Web) in 510.1552ms
+2026-01-12 08:52:18.079 +05:00 [INF] Executed endpoint 'Web.Controller.InventoryItemController.GetAll (Web)'
+2026-01-12 08:52:18.082 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/InventoryItem - 200 null application/json; charset=utf-8 580.815ms
+2026-01-12 08:52:29.873 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/InventoryItem?Name=string - null null
+2026-01-12 08:52:29.877 +05:00 [INF] Executing endpoint 'Web.Controller.InventoryItemController.GetAll (Web)'
+2026-01-12 08:52:29.880 +05:00 [INF] Route matched with {action = "GetAll", controller = "InventoryItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.PaginationResponse`1[System.Collections.Generic.List`1[Domain.Dtos.InventoryItem.GetInventoryItemDto]]] GetAll(Domain.Filter.InventoryItemFilter) on controller Web.Controller.InventoryItemController (Web).
+2026-01-12 08:52:30.061 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.PaginationResponse`1[[System.Collections.Generic.List`1[[Domain.Dtos.InventoryItem.GetInventoryItemDto, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-12 08:52:30.064 +05:00 [INF] Executed action Web.Controller.InventoryItemController.GetAll (Web) in 181.2363ms
+2026-01-12 08:52:30.067 +05:00 [INF] Executed endpoint 'Web.Controller.InventoryItemController.GetAll (Web)'
+2026-01-12 08:52:30.070 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/InventoryItem?Name=string - 200 null application/json; charset=utf-8 196.8967ms
+2026-01-12 08:54:32.111 +05:00 [INF] Application is shutting down...
+2026-01-12 08:54:41.045 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-12 08:54:41.333 +05:00 [INF] No migrations were applied. The database is already up to date.
+2026-01-12 08:54:41.776 +05:00 [WRN] The WebRootPath was not found: C:\Users\SBoboev\Desktop\Warehouse\Web\wwwroot. Static files may be unavailable.
+2026-01-12 08:54:41.794 +05:00 [INF] Now listening on: http://localhost:5095
+2026-01-12 08:54:41.798 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-12 08:54:41.798 +05:00 [INF] Hosting environment: Development
+2026-01-12 08:54:41.799 +05:00 [INF] Content root path: C:\Users\SBoboev\Desktop\Warehouse\Web
+2026-01-12 08:54:41.986 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/index.html - null null
+2026-01-12 08:54:42.054 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/index.html - 200 null text/html;charset=utf-8 69.4757ms
+2026-01-12 08:54:42.231 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - null null
+2026-01-12 08:54:42.277 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.4492ms
+2026-01-12 08:54:56.879 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/InventoryItem/count?Name=string - null null
+2026-01-12 08:54:56.902 +05:00 [INF] Executing endpoint 'Web.Controller.InventoryItemController.GetCountByName (Web)'
+2026-01-12 08:54:56.917 +05:00 [INF] Route matched with {action = "GetCountByName", controller = "InventoryItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.Int32]] GetCountByName(Domain.Filter.InventoryItemFilter) on controller Web.Controller.InventoryItemController (Web).
+2026-01-12 08:54:57.293 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-12 08:54:57.332 +05:00 [INF] Executed action Web.Controller.InventoryItemController.GetCountByName (Web) in 408.291ms
+2026-01-12 08:54:57.338 +05:00 [INF] Executed endpoint 'Web.Controller.InventoryItemController.GetCountByName (Web)'
+2026-01-12 08:54:57.350 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/InventoryItem/count?Name=string - 200 null application/json; charset=utf-8 471.4111ms
+2026-01-12 08:55:07.181 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/api/InventoryItem/count?Name=strin - null null
+2026-01-12 08:55:07.191 +05:00 [INF] Executing endpoint 'Web.Controller.InventoryItemController.GetCountByName (Web)'
+2026-01-12 08:55:07.197 +05:00 [INF] Route matched with {action = "GetCountByName", controller = "InventoryItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Infrastructure.Response.ApiResponse`1[System.Int32]] GetCountByName(Domain.Filter.InventoryItemFilter) on controller Web.Controller.InventoryItemController (Web).
+2026-01-12 08:55:07.384 +05:00 [INF] Executing ObjectResult, writing value of type 'Infrastructure.Response.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-12 08:55:07.390 +05:00 [INF] Executed action Web.Controller.InventoryItemController.GetCountByName (Web) in 187.9915ms
+2026-01-12 08:55:07.393 +05:00 [INF] Executed endpoint 'Web.Controller.InventoryItemController.GetCountByName (Web)'
+2026-01-12 08:55:07.397 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/InventoryItem/count?Name=strin - 200 null application/json; charset=utf-8 215.5175ms
+2026-01-12 08:55:12.108 +05:00 [INF] Application is shutting down...

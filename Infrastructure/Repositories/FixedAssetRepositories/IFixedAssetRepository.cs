@@ -7,6 +7,8 @@ namespace Infrastructure.Repositories.FixedAssetRepositories;
 public interface IFixedAssetRepository
 {
     Task<List<FixedAsset>> GetAll(FixedAssetFilter filter);
+    Task<int> GetCountByName(FixedAssetFilter filter);
+
     Task<FixedAsset?> GetFixedAsset(Expression<Func<FixedAsset, bool>>? filter = null);
     Task<int> CreateFixedAsset(FixedAsset request);
     Task<int> UpdateFixedAsset(FixedAsset request);
