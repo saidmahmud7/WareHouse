@@ -7,7 +7,7 @@ namespace Infrastructure.Interfaces;
 
 public interface IDepartmentService
 {
-    Task<PaginationResponse<List<GetDepartmentDto>>> GetAllDepartmentAsync(DepartmentFilter filter);
+    Task<ApiResponse<List<GetDepartmentDto>>> GetAllDepartmentAsync(DepartmentFilter filter);
     Task<ApiResponse<GetDepartmentDto>> GetByIdAsync(int id);
     Task<ApiResponse<string>> CreateAsync(AddDepartmentDto request);
     Task<ApiResponse<string>> UpdateAsync(int id,UpdateDepartmentDto request);

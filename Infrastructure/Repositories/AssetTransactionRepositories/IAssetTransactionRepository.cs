@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using Domain.Entities;
+using Domain.Filter;
 
 namespace Infrastructure.Repositories.AssetTransactionRepositories;
 

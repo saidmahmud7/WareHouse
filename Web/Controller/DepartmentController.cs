@@ -14,7 +14,7 @@ namespace Web.Controller;
 public class DepartmentController(IDepartmentService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<PaginationResponse<List<GetDepartmentDto>>> GetAll([FromQuery]DepartmentFilter filter) => await service.GetAllDepartmentAsync(filter);
+    public async Task<ApiResponse<List<GetDepartmentDto>>> GetAll([FromQuery]DepartmentFilter filter) => await service.GetAllDepartmentAsync(filter);
     
     [HttpGet("{id}")]
     public async Task<ApiResponse<GetDepartmentDto>> GetById(int id) => await service.GetByIdAsync(id);

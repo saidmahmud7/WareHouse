@@ -11,15 +11,11 @@ namespace Infrastructure.Services;
 
 public class FixedAssetService(IFixedAssetRepository repository) : IFixedAssetService
 {
-    public async Task<PaginationResponse<List<GetFixedAssetDto>>> GetAllFixedAssetAsync(FixedAssetFilter filter)
+    public async Task<ApiResponse<List<GetFixedAssetDto>>> GetAllFixedAssetAsync(FixedAssetFilter filter)
     {
         var fixedAssets = await repository.GetAll(filter);
-        var totalRecords = fixedAssets.Count;
-        var data = fixedAssets
-            .Skip((filter.PageNumber - 1) * filter.PageSize)
-            .Take(filter.PageSize)
-            .ToList();
-        var result = data.Select(f => new GetFixedAssetDto()
+        
+        var result = fixedAssets.Select(f => new GetFixedAssetDto()
         {
             Id = f.Id,
             Name = f.Name,
@@ -29,8 +25,7 @@ public class FixedAssetService(IFixedAssetRepository repository) : IFixedAssetSe
             SerialNumber = f.SerialNumber,
             UsefulLifeYears = f.UsefulLifeYears
         }).ToList();
-        return new PaginationResponse<List<GetFixedAssetDto>>(result, totalRecords, filter.PageNumber,
-            filter.PageSize);
+        return new ApiResponse<List<GetFixedAssetDto>>(result);
     }
 
     public Task<ApiResponse<int>> GetFixedAssetCountAsync(InventoryItemFilter filter)

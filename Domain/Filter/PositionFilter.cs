@@ -1,6 +1,6 @@
 namespace Domain.Filter;
 
-public class PositionFilter : BaseFilter
+public class PositionFilter
 {
     
 }

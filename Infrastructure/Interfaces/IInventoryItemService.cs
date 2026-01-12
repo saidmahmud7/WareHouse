@@ -6,7 +6,7 @@ namespace Infrastructure.Interfaces;
 
 public interface IInventoryItemService
 {
-    Task<PaginationResponse<List<GetInventoryItemDto>>> GetAllInventoryItemAsync(InventoryItemFilter filter);
+    Task<ApiResponse<List<GetInventoryItemDto>>> GetAllInventoryItemAsync(InventoryItemFilter filter);
     Task<ApiResponse<int>> GetInventoryItemCountAsync(InventoryItemFilter filter);
     Task<ApiResponse<GetInventoryItemDto>> GetByIdAsync(int id);
     Task<ApiResponse<string>> CreateAsync(AddInventoryItemDto request);

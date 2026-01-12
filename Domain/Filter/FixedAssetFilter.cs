@@ -1,6 +1,6 @@
 namespace Domain.Filter;
 
-public class FixedAssetFilter : BaseFilter
+public class FixedAssetFilter 
 {
     public string? Name { get; set; }
 

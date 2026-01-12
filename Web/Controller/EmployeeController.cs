@@ -12,7 +12,7 @@ namespace Web.Controller;
 public class EmployeeController(IEmployeeService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<PaginationResponse<List<GetEmployeeDto>>> GetAll([FromQuery] EmployeeFilter filter) =>
+    public async Task<ApiResponse<List<GetEmployeeDto>>> GetAll([FromQuery] EmployeeFilter filter) =>
         await service.GetAllEmployeeAsync(filter);
 
     [HttpGet("{id}")]

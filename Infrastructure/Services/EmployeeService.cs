@@ -15,15 +15,11 @@ namespace Infrastructure.Services;
 
 public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment _environment) : IEmployeeService
 {
-    public async Task<PaginationResponse<List<GetEmployeeDto>>> GetAllEmployeeAsync(EmployeeFilter filter)
+    public async Task<ApiResponse<List<GetEmployeeDto>>> GetAllEmployeeAsync(EmployeeFilter filter)
     {
         var employee = await repository.GetAll(filter);
-        var totalRecords = employee.Count;
-        var data = employee
-            .Skip((filter.PageNumber - 1) * filter.PageSize)
-            .Take(filter.PageSize)
-            .ToList();
-        var result = data.Select(e => new GetEmployeeDto()
+       
+        var result = employee.Select(e => new GetEmployeeDto()
         {
             Id = e.Id,
             FullName = e.FullName,
@@ -50,8 +46,7 @@ public class EmployeeService(IEmployeeRepository repository, IWebHostEnvironment
                 Unit = i.Unit,
             }).ToList()
         }).ToList();
-        return new PaginationResponse<List<GetEmployeeDto>>(result, totalRecords, filter.PageNumber,
-            filter.PageSize);
+        return new ApiResponse<List<GetEmployeeDto>>(result);
     }
 
     public async Task<ApiResponse<GetEmployeeDto>> GetByIdAsync(int id)

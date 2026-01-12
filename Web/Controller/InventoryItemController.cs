@@ -11,7 +11,7 @@ namespace Web.Controller;
 public class InventoryItemController(IInventoryItemService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<PaginationResponse<List<GetInventoryItemDto>>> GetAll([FromQuery] InventoryItemFilter filter) =>
+    public async Task<ApiResponse<List<GetInventoryItemDto>>> GetAll([FromQuery] InventoryItemFilter filter) =>
         await service.GetAllInventoryItemAsync(filter);
 
     [HttpGet("get-count")]

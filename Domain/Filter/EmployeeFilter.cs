@@ -1,6 +1,6 @@
 namespace Domain.Filter;
 
-public class EmployeeFilter : BaseFilter
+public class EmployeeFilter 
 {
     public string? FullName { get; set; }
 }

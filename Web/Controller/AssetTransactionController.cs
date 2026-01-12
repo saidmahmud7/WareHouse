@@ -1,5 +1,6 @@
 using Domain.Dtos.AssetTransactionDto;
 using Domain.Entities;
+using Domain.Filter;
 using Infrastructure.Interfaces;
 using Infrastructure.Response;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ namespace Web.Controller;
 public class AssetTransactionController(IAssetTransactionService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<PaginationResponse<List<GetAssetTransactionDto>>> GetAll([FromQuery]AssetTransactionFilter filter) => await service.GetAllAssetTransactionAsync(filter);
+    public async Task<ApiResponse<List<GetAssetTransactionDto>>> GetAll([FromQuery]AssetTransactionFilter filter) => await service.GetAllAssetTransactionAsync(filter);
 
     [HttpGet("{id}")]
     public async Task<ApiResponse<GetAssetTransactionDto>> GetById(int id) => await service.GetByIdAsync(id);

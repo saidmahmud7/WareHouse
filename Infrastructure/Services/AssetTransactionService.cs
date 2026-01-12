@@ -2,6 +2,7 @@ using System.Net;
 using Domain.Dtos.AssetTransactionDto;
 using Domain.Entities;
 using Domain.Exeptions;
+using Domain.Filter;
 using Infrastructure.Interfaces;
 using Infrastructure.Repositories.AssetTransactionRepositories;
 using Infrastructure.Response;
@@ -10,16 +11,12 @@ namespace Infrastructure.Services;
 
 public class AssetTransactionService(IAssetTransactionRepository repository) : IAssetTransactionService
 {
-    public async Task<PaginationResponse<List<GetAssetTransactionDto>>> GetAllAssetTransactionAsync(
+    public async Task<ApiResponse<List<GetAssetTransactionDto>>> GetAllAssetTransactionAsync(
         AssetTransactionFilter filter)
     {
         var assetTransaction = await repository.GetAll(filter);
-        var totalRecords = assetTransaction.Count;
-        var data = assetTransaction
-            .Skip((filter.PageNumber - 1) * filter.PageSize)
-            .Take(filter.PageSize)
-            .ToList();
-        var result = data.Select(a => new GetAssetTransactionDto()
+      
+        var result = assetTransaction.Select(a => new GetAssetTransactionDto()
         {
             Id = a.Id,
             FixedAssetId = a.FixedAssetId,
@@ -29,8 +26,7 @@ public class AssetTransactionService(IAssetTransactionRepository repository) : I
             FromEmployeeId = a.FromEmployeeId,
             ToEmployeeId = a.ToEmployeeId
         }).ToList();
-        return new PaginationResponse<List<GetAssetTransactionDto>>(result, totalRecords, filter.PageNumber,
-            filter.PageSize);
+        return new ApiResponse<List<GetAssetTransactionDto>>(result);
     }
 
     public async Task<ApiResponse<GetAssetTransactionDto>> GetByIdAsync(int id)

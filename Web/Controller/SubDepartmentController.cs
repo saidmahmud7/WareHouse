@@ -10,7 +10,7 @@ namespace Web.Controller;
 public class SubDepartmentController(ISubDepartmentService service) : ControllerBase
 {
     [HttpGet]
-    public async Task<PaginationResponse<List<GetSubDepartmentDto>>> GetAll([FromQuery] SubDepartmentFilter filter) =>
+    public async Task<ApiResponse<List<GetSubDepartmentDto>>> GetAll([FromQuery] SubDepartmentFilter filter) =>
         await service.GetAllSubDepartmentAsync(filter);
 
     [HttpGet("{id}")]

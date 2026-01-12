@@ -11,16 +11,12 @@ namespace Infrastructure.Services;
 
 public class InventoryItemService(IInventoryItemRepository repository) : IInventoryItemService
 {
-    public async Task<PaginationResponse<List<GetInventoryItemDto>>> GetAllInventoryItemAsync(
+    public async Task<ApiResponse<List<GetInventoryItemDto>>> GetAllInventoryItemAsync(
         InventoryItemFilter filter)
     {
         var inventoryItem = await repository.GetAll(filter);
-        var totalRecords = inventoryItem.Count;
-        var data = inventoryItem
-            .Skip((filter.PageNumber - 1) * filter.PageSize)
-            .Take(filter.PageSize)
-            .ToList();
-        var result = data.Select(i => new GetInventoryItemDto()
+       
+        var result = inventoryItem.Select(i => new GetInventoryItemDto()
         {
             Id = i.Id,
             Name = i.Name,
@@ -29,8 +25,7 @@ public class InventoryItemService(IInventoryItemRepository repository) : IInvent
             EmployeeId = i.EmployeeId,
             Unit = i.Unit,
         }).ToList();
-        return new PaginationResponse<List<GetInventoryItemDto>>(result, totalRecords, filter.PageNumber,
-            filter.PageSize);
+        return new ApiResponse<List<GetInventoryItemDto>>(result);
     }
 
     public async Task<ApiResponse<int>> GetInventoryItemCountAsync(InventoryItemFilter filter)

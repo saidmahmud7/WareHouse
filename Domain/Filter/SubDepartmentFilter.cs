@@ -1,6 +1,6 @@
 namespace Domain.Filter;
 
-public class SubDepartmentFilter : BaseFilter
+public class SubDepartmentFilter 
 {
     public string? Name { get; set; }
 }

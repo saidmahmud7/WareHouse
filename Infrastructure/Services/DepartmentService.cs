@@ -13,15 +13,11 @@ namespace Infrastructure.Services;
 
 public class DepartmentService(IDepartmentRepository repository) : IDepartmentService
 {
-    public async Task<PaginationResponse<List<GetDepartmentDto>>> GetAllDepartmentAsync(DepartmentFilter filter)
+    public async Task<ApiResponse<List<GetDepartmentDto>>> GetAllDepartmentAsync(DepartmentFilter filter)
     {
         var department = await repository.GetAll(filter);
-        var totalRecords = department.Count;
-        var data = department
-            .Skip((filter.PageNumber - 1) * filter.PageSize)
-            .Take(filter.PageSize)
-            .ToList();
-        var result = data.Select(d => new GetDepartmentDto()
+       
+        var result = department.Select(d => new GetDepartmentDto()
         {
             Id = d.Id,
             Name = d.Name,
@@ -33,8 +29,7 @@ public class DepartmentService(IDepartmentRepository repository) : IDepartmentSe
 
             }).ToList()
         }).ToList();
-        return new PaginationResponse<List<GetDepartmentDto>>(result, totalRecords, filter.PageNumber,
-            filter.PageSize);
+        return new ApiResponse<List<GetDepartmentDto>>(result);
     }
 
     public async Task<ApiResponse<GetDepartmentDto>> GetByIdAsync(int id)

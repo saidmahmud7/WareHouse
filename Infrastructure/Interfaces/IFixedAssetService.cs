@@ -7,7 +7,7 @@ namespace Infrastructure.Interfaces;
 public interface IFixedAssetService
 {
     
-    Task<PaginationResponse<List<GetFixedAssetDto>>> GetAllFixedAssetAsync(FixedAssetFilter filter);
+    Task<ApiResponse<List<GetFixedAssetDto>>> GetAllFixedAssetAsync(FixedAssetFilter filter);
     Task<ApiResponse<int>> GetFixedAssetCountAsync(FixedAssetFilter filter);
 
     Task<ApiResponse<GetFixedAssetDto>> GetByIdAsync(int id);
