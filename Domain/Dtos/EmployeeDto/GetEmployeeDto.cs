@@ -10,7 +10,7 @@ public class GetEmployeeDto
     public string FullName { get; set; }
     public RoleForEmployee RoleForEmployee { get; set; }
     public string Position { get; set; }
-    public int? SubDepartmentId { get; set; }
+    public int SubDepartmentId { get; set; }
     public List<GetFixedAssetDto> FixedAssets { get; set; } = new();
     public List<GetInventoryItemDto> InventoryItems { get; set; } = new();
 }

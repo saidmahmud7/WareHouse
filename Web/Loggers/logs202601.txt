@@ -221,3 +221,9 @@ System.InvalidOperationException: Unable to resolve service for type 'Infrastruc
 2026-01-12 08:55:07.393 +05:00 [INF] Executed endpoint 'Web.Controller.InventoryItemController.GetCountByName (Web)'
 2026-01-12 08:55:07.397 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/api/InventoryItem/count?Name=strin - 200 null application/json; charset=utf-8 215.5175ms
 2026-01-12 08:55:12.108 +05:00 [INF] Application is shutting down...
+2026-01-12 10:22:26.773 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-12 10:22:27.052 +05:00 [INF] Applying migration '20260112052208_Initial4'.
+2026-01-12 10:25:08.743 +05:00 [ERR] An error occurred using the connection to database 'warehouse_db_5n3z' on server 'tcp://dpg-d5g8pgu3jp1c73bstbvg-a.singapore-postgres.render.com:5432'.
+2026-01-12 10:25:15.034 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-01-12 10:25:15.368 +05:00 [INF] Applying migration '20260110042522_Initial3'.
+2026-01-12 10:25:17.131 +05:00 [INF] Applying migration '20260112052208_Initial4'.
