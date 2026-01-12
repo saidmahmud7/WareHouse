@@ -11,8 +11,8 @@ public class Employee
     public RoleForEmployee RoleForEmployee { get; set; }   
     public string Position { get; set; }
 
-    public int? SubDepartmentId { get; set; }
-    public SubDepartment? SubDepartment { get; set; }
+    public int SubDepartmentId { get; set; }
+    public SubDepartment SubDepartment { get; set; }
 
     public List<FixedAsset> FixedAssets { get; set; } = new();
     public List<InventoryItem> InventoryItems { get; set; } = new();

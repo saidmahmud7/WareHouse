@@ -11,5 +11,5 @@ public class AddEmployeeDto
     public RoleForEmployee RoleForEmployee { get; set; }
     public string Position { get; set; }
 
-    public int? SubDepartmentId { get; set; }
+    public int SubDepartmentId { get; set; }
 }
